@@ -1,0 +1,94 @@
+@import "../../../css/common";
+
+.address-container {
+    width: 100%;
+
+    .header {
+        width: 100%;
+        height: 2.7rem;
+        background: rgba(2, 181, 157, .85);
+        background: -webkit-linear-gradient(45deg, rgba(2, 181, 157, .85) 2%, rgba(22, 146, 183, .85) 100%);
+        text-align: center;
+        padding-top: 0.4rem;
+
+        .header-img {
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+        }
+
+        .header-icon {
+            width: 1.3rem;
+            height: 1.3rem;
+            line-height: 1.3rem;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            color: darkgray;
+            display: inline-block;
+            background: white;
+        }
+
+        .name {
+            color: white;
+            font-size: 0.24rem;
+            text-align: center;
+            margin-top: 0.2rem;
+        }
+    }
+
+    .item {
+        $hei: 0.8rem;
+        border-bottom: solid 1px $lineColor;
+        border-top: solid 1px $lineColor;
+        height: $hei;
+        line-height: $hei;
+        background: white;
+        width: 100%;
+        position: relative;
+        margin-top: 0.2rem;
+
+        .item-icon {
+            font-size: 0.4rem;
+            margin-left: 0.2rem;
+            pointer-events: none;
+        }
+
+        .icon-order {
+            color: $mainColor;
+        }
+
+        .icon-address {
+            color: rgb(74, 165, 240);
+        }
+
+        .icon-info {
+            color: rgb(148, 217, 74);
+        }
+
+        .icon-collection {
+            color: rgb(252, 123, 83);
+            line-height: 0.9;
+        }
+
+        .text {
+            display: inline-block;
+            height: 100%;
+            line-height: $hei;
+            vertical-align: top;
+            margin-left: 0.1rem;
+            pointer-events: none;
+        }
+        .icon-right {
+            display: inline-block;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            vertical-align: top;
+            color: gray;
+            font-weight: bolder;
+            font-size: 0.24rem;
+            position: absolute;
+            right: 0.2rem;
+            pointer-events: none;
+        }
+    }
+}
