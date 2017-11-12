@@ -1,7 +1,14 @@
 <template>
     <div class="address-container">
         <ul class="address-list">
+            <li class="item" v-for="(item,index) in list" :id="index" >
+                <div class="info">
+                    <span class="user-name">{{item.userName}}</span>
+                    <span class="text">{{item.gender===1?'女士':'先生'}}</span>
+                    <span class="address">{{item.phone}}</span>
+                </div>
 
+            </li>
         </ul>
 
         <div class="add-address">
@@ -17,7 +24,9 @@
 
     export default{
         data () {
-            return {}
+            return {
+                list: []
+            }
         },
         computed: {
             ...mapState({
@@ -28,7 +37,7 @@
         beforeMount () {
 
             req.get(this.$URL.GET_ADDRESS_LIST).then((res) => {
-                console.log(res)
+                this.list = res.content.list;
             }).catch(res => {
                 console.log(res)
             });

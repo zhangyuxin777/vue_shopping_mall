@@ -27,7 +27,7 @@ const userInfo = function () {
 const addressList = function () {
 
     let list = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         let obj = {
             userName: Random.cname(),
             gender: Random.natural(0, 1),
