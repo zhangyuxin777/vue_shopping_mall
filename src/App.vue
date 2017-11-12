@@ -1,8 +1,7 @@
-
 <template>
     <div id="app">
         <router-view></router-view>
-        <FootBar></FootBar>
+        <FootBar v-if="isShowFooter"></FootBar>
     </div>
 </template>
 
@@ -17,6 +16,12 @@
 
     export default {
         name: 'app',
+
+        data () {
+            return {
+                isShowFooter: true
+            }
+        },
 
         components: {
             FootBar
@@ -37,21 +42,22 @@
         },
 
         mounted () {
+            this.isShowFooter = (this.$router.history.current.name === 'personal');
         },
+        methods: {},
 
-        methods: {
-
-        },
-
-        computed: {
-        },
+        computed: {},
 
         watch: {
+            '$route' (to, from) {
 
+                this.isShowFooter = (to.name === 'personal');
+                console.log(to)
+
+            }
         }
     }
 </script>
-
 
 
 <style scoped>

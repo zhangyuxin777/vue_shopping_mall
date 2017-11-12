@@ -35,6 +35,11 @@ body {
     box-sizing: border-box;
 }
 
+span {
+    display: inline-block;
+    vertical-align: top;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none !important;
@@ -389,7 +394,6 @@ ol, ul:not(.mui-pciker-list) {
     border-radius: 0;
     background: #fff
 }
-
 
 @media (device-width: 320px) and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
     /* iphone5 */

@@ -21,6 +21,7 @@ const BASE_URL = `${location.protocol}//${location.host}/${PROJECT_PRXFIX_URL}`;
 */
 const URL = {
     // 用户
-    'GET_USER_INFO': `${BASE_URL}/user/profile`
+    'GET_USER_INFO': `${BASE_URL}/user/profile`,
+    'GET_ADDRESS_LIST': `${BASE_URL}/user/addressList`
 };
 export default URL;

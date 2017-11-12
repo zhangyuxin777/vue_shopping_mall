@@ -1,37 +1,33 @@
 import Vue from 'vue'
+import $ from 'jquery'
 
-export function getRequest(url, params) {
+export function get(url) {
     return new Promise((resolve, reject) => {
-        Vue.http.get(
-            url,
-            {
-                params: params
-            },
-            {emulateJSON: true}
-        )
-            .then((res) => {
-                resolve(res);
-            })
-            .catch((res) => {
-                reject(res);
-            });
+        $.ajax({
+            async: true,
+            url: url,
+            type: 'get',
+            dataType: 'json'
+        }).done(function (res, status, xhr) {
+            resolve(res);
+        }).catch(function (res, status, xhr) {
+            reject(res);
+        });
     });
 }
 
-export function postRequest(url, params) {
+export function post(url, params) {
     return new Promise((resolve, reject) => {
-        Vue.http.post(
-            url,
-            {
-                params
-            },
-            {emulateJSON: true}
-        )
-            .then((res) => {
-                resolve(res.body);
-            })
-            .catch((res) => {
-                reject(res.body);
-            });
+        $.ajax({
+            async: true,
+            data: params,
+            url: url,
+            type: 'post',
+            dataType: 'json'
+        }).done(function (res) {
+            resolve(res);
+        }).catch(function (res, status, xhr) {
+            reject(res);
+        });
     });
 }

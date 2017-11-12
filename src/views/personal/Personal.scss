@@ -38,8 +38,8 @@
 
     .item {
         $hei: 0.8rem;
-        border-bottom: solid 1px $lineColor;
-        border-top: solid 1px $lineColor;
+        @include border-bottom-line();
+        @include border-top-line();
         height: $hei;
         line-height: $hei;
         background: white;

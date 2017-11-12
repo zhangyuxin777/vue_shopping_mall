@@ -2,93 +2,51 @@
 
 .address-container {
     width: 100%;
-
-    .header {
-        width: 100%;
-        height: 2.7rem;
-        background: rgba(2, 181, 157, .85);
-        background: -webkit-linear-gradient(45deg, rgba(2, 181, 157, .85) 2%, rgba(22, 146, 183, .85) 100%);
-        text-align: center;
-        padding-top: 0.4rem;
-
-        .header-img {
-            width: 1.3rem;
-            height: 1.3rem;
-            border-radius: 50%;
-        }
-
-        .header-icon {
-            width: 1.3rem;
-            height: 1.3rem;
-            line-height: 1.3rem;
-            border-radius: 50%;
-            font-size: 0.7rem;
-            color: darkgray;
-            display: inline-block;
-            background: white;
-        }
-
-        .name {
-            color: white;
-            font-size: 0.24rem;
-            text-align: center;
-            margin-top: 0.2rem;
-        }
-    }
-
+    position: relative;
     .item {
-        $hei: 0.8rem;
-        border-bottom: solid 1px $lineColor;
-        border-top: solid 1px $lineColor;
+        $hei: 0.9rem;
+        @include border-bottom-line();
         height: $hei;
-        line-height: $hei;
         background: white;
         width: 100%;
         position: relative;
         margin-top: 0.2rem;
+        color: #666;
 
-        .item-icon {
-            font-size: 0.4rem;
-            margin-left: 0.2rem;
-            pointer-events: none;
-        }
+        .info {
+            .user-name {
+                color: #333;
+                font-weight: 700;
+                font-size: 0.26rem;
+            }
+            .gender {
+                color: #666;
+            }
+            .phone {
 
-        .icon-order {
-            color: $mainColor;
+            }
+            .address {
+                font-size: 0.23rem;
+            }
         }
+        .modify {
 
-        .icon-address {
-            color: rgb(74, 165, 240);
         }
+    }
+    .add-address {
+        height: 0.8rem;
+        line-height: 0.8rem;
+        text-align: center;
+        color: $mainColor;
+        position: fixed;
+        bottom: 0;
+        width: $pageWidth;
+        background: white;
+        @include border-top-line();
+        font-size: 0.26rem;
 
-        .icon-info {
-            color: rgb(148, 217, 74);
-        }
-
-        .icon-collection {
-            color: rgb(252, 123, 83);
-            line-height: 0.9;
-        }
-
-        .text {
-            display: inline-block;
-            height: 100%;
-            line-height: $hei;
-            vertical-align: top;
-            margin-left: 0.1rem;
-            pointer-events: none;
-        }
-        .icon-right {
-            display: inline-block;
-            height: 0.8rem;
-            line-height: 0.8rem;
-            vertical-align: top;
-            color: gray;
-            font-weight: bolder;
-            font-size: 0.24rem;
-            position: absolute;
-            right: 0.2rem;
-            pointer-events: none;
+        .icon-add {
+            font-size: 40px;
         }
     }
 }

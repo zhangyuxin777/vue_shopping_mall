@@ -34,14 +34,12 @@
 
     import Common from '../../js/rock';
     import * as req from '../../utils/req';
-    import URL from '../../constants/URL';
 
-    import data from '../../utils/mock';
     export default{
         data () {
             return {
                 headerUrl: '',
-                userName: 's'
+                userName: ''
             }
         },
         computed: {
@@ -52,15 +50,12 @@
         methods: {},
         beforeMount () {
 
-            req.getRequest(URL.GET_USER_INFO, '', (res) => {
-                console.log('sdssssssss')
-                console.log(res)
-            }, (res) => {
-                console.log(res)
+            req.get(this.$URL.GET_USER_INFO).then((res) => {
+                this.headerUrl = res.content.headUrl;
+                this.userName = res.content.userName;
             });
         },
         mounted () {
-            this.$store.dispatch('playSong', 'ss')
         }
     }
 </script>
